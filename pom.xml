@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <name>CD Collection Manager</name>
+
+    <groupId>org.infokin</groupId>
+    <artifactId>cd-collection-manager</artifactId>
+    <version>1.0</version>
+
+    <packaging>war</packaging>
+
+    <properties>
+        <!-- Explicitly declare the source encoding to avoid warning messages. -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <!-- JDK 8 -->
+        <version.java>1.8</version.java>
+
+        <!-- EJB 3 -->
+        <version.ejb>3.2</version.ejb>
+
+        <!-- Plugins -->
+        <version.plugin.compiler>3.7.0</version.plugin.compiler>
+        <version.plugin.ejb>3.0.1</version.plugin.ejb>
+        <version.plugin.war>3.2.0</version.plugin.war>
+    </properties>
+
+    <dependencies>
+        <!-- JavaEE API -->
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-api</artifactId>
+            <version>8.0</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- BootsFaces -->
+        <dependency>
+            <groupId>net.bootsfaces</groupId>
+            <artifactId>bootsfaces</artifactId>
+            <version>1.2.0</version>
+        </dependency>
+
+        <!-- OmniFaces -->
+        <dependency>
+            <groupId>org.omnifaces</groupId>
+            <artifactId>omnifaces</artifactId>
+            <version>2.6.9</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <!-- Maven Compiler Plugin -->
+                <plugin>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>${version.plugin.compiler}</version>
+
+                    <configuration>
+                        <source>${version.java}</source>
+                        <target>${version.java}</target>
+                    </configuration>
+                </plugin>
+
+                <!-- Maven EJB Plugin -->
+                <plugin>
+                    <artifactId>maven-ejb-plugin</artifactId>
+                    <version>${version.plugin.ejb}</version>
+
+                    <configuration>
+                        <ejbVersion>${version.ejb}</ejbVersion>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+</project>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:b="http://bootsfaces.net/ui"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="WEB-INF/templates/default.xhtml">
+
+    <ui:define name="title">Bands</ui:define>
+
+    <ui:define name="content">
+        <b:row id="tableRow">
+            <b:column>
+                <b:form>
+                    <b:dataTable value="#{bandBean.allBands}" var="band">
+                        <b:dataTableColumn value="#{band.name}" label="Band name"/>
+                        <b:dataTableColumn label="Edit">
+                            <b:commandButton icon="edit" update=":addRow :editRow" action="#{bandBean.editBand(band)}"/>
+                        </b:dataTableColumn>
+                        <b:dataTableColumn label="Delete">
+                            <b:commandButton icon="trash" update="@form" action="#{bandBean.deleteBand(band)}"/>
+                        </b:dataTableColumn>
+                    </b:dataTable>
+                </b:form>
+            </b:column>
+        </b:row>
+        <b:row id="addRow">
+            <b:column rendered="#{not bandBean.editable}">
+                <h3>Add new band</h3>
+                <b:form>
+                    Band name
+                    <b:inputText value="#{bandBean.newBandName}"><b:focus/></b:inputText>
+                    <b:commandButton value="Add" update="@form :tableRow" action="#{bandBean.createBand}"/>
+                </b:form>
+            </b:column>
+        </b:row>
+        <b:row id="editRow">
+            <b:column rendered="#{bandBean.editable}">
+                <h3>Edit band</h3>
+                <b:form>
+                    Band name
+                    <b:inputText value="#{bandBean.selectedBand.name}"><b:focus/></b:inputText>
+                    <b:buttonGroup>
+                        <b:commandButton value="Save" update=":tableRow :addRow :editRow" action="#{bandBean.saveBand}"/>
+                        <b:commandButton value="Cancel" update=":addRow :editRow" action="#{bandBean.cancelEditBand}"/>
+                    </b:buttonGroup>
+                </b:form>
+            </b:column>
+        </b:row>
+    </ui:define>
+</ui:composition>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:b="http://bootsfaces.net/ui"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="WEB-INF/templates/default.xhtml">
+
+    <ui:define name="title">Overview</ui:define>
+
+    <ui:define name="content">
+        <b:row>
+            <b:column>
+                <b:form>
+                    <b:dataTable value="#{albumBean.allAlbums}" var="album">
+                        <b:dataTableColumn value="#{album.band.name}" label="Band name"/>
+                        <b:dataTableColumn value="#{album.name}" label="Album name"/>
+                    </b:dataTable>
+                </b:form>
+            </b:column>
+        </b:row>
+    </ui:define>
+</ui:composition>

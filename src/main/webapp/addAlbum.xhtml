@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:b="http://bootsfaces.net/ui"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="WEB-INF/templates/default.xhtml">
+
+    <ui:define name="title">Add new album</ui:define>
+
+    <ui:define name="content">
+        <b:row>
+            <h:form>
+                <label>Album name</label>
+                <h:inputText value="#{albumBean.newAlbumName}"/>
+                <label>Band name</label>
+                <h:selectOneMenu value="#{albumBean.newBand}" converter="omnifaces.SelectItemsConverter">
+                    <f:selectItems value="#{bandBean.allBands}" var="band" itemLabel="#{band.name}" itemValue="#{band}"/>
+                </h:selectOneMenu>
+                <h:commandButton value="Add" action="#{albumBean.createAlbum}"/>
+            </h:form>
+        </b:row>
+    </ui:define>
+</ui:composition>
