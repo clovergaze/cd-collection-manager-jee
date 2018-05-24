@@ -10,8 +10,16 @@ import java.util.List;
 @Stateless
 public class BandService {
 
+    /*--------------
+    | Repositories |
+    --------------*/
+
     @Inject
     private BandRepository bandRepository;
+
+    /*---------
+    | Methods |
+    ---------*/
 
     public void createBand(Band band) {
         bandRepository.save(band);

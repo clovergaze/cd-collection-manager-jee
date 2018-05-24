@@ -25,6 +25,14 @@ public abstract class AbstractBaseRepository<T extends BaseEntity> implements Ba
      * {@inheritDoc}
      */
     @Override
+    public void update(T entity) {
+        entityManager.merge(entity);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
     public void delete(T entity) {
         entityManager.remove(entityManager.contains(entity) ? entity : entityManager.merge(entity));
     }

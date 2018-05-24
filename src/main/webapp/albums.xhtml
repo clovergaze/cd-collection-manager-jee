@@ -2,25 +2,56 @@
 
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
                 xmlns:b="http://bootsfaces.net/ui"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
                 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
                 template="WEB-INF/templates/default.xhtml">
 
     <ui:define name="title">Albums</ui:define>
 
     <ui:define name="content">
-        <b:row>
+        <b:row id="tableRow">
             <b:column>
                 <b:form>
                     <b:dataTable value="#{albumBean.allAlbums}" var="album">
                         <b:dataTableColumn value="#{album.name}" label="Album name"/>
+                        <b:dataTableColumn label="Edit">
+                            <b:commandButton icon="edit" update=":addRow :editRow" action="#{albumBean.editAlbum(album)}"/>
+                        </b:dataTableColumn>
+                        <b:dataTableColumn label="Delete">
+                            <b:commandButton icon="trash" update="@form" action="#{albumBean.deleteAlbum(album)}"/>
+                        </b:dataTableColumn>
                     </b:dataTable>
                 </b:form>
             </b:column>
         </b:row>
-        <b:row>
-            <b:column>
+        <b:row id="addRow">
+            <b:column rendered="#{not albumBean.editable}">
+                <h3>Add new album</h3>
                 <b:form>
-                    <b:commandLink value="Add new album" action="addAlbum?faces-redirect=true"/>
+                    Album name
+                    <b:inputText value="#{albumBean.newAlbumName}"><b:focus/></b:inputText>
+                    Band name
+                    <b:selectOneMenu value="#{albumBean.newBand}" converter="omnifaces.SelectItemsConverter">
+                        <f:selectItems value="#{bandBean.allBands}" var="band" itemLabel="#{band.name}" itemValue="#{band}"/>
+                    </b:selectOneMenu>
+                    <b:commandButton value="Add" update="@form :tableRow" action="#{albumBean.createAlbum}"/>
+                </b:form>
+            </b:column>
+        </b:row>
+        <b:row id="editRow">
+            <b:column rendered="#{albumBean.editable}">
+                <h3>Edit album</h3>
+                <b:form>
+                    Album name
+                    <b:inputText value="#{albumBean.selectedAlbum.name}"><b:focus/></b:inputText>
+                    Band name
+                    <b:selectOneMenu value="#{albumBean.selectedAlbum.band}" converter="omnifaces.SelectItemsConverter">
+                        <f:selectItems value="#{bandBean.allBands}" var="band" itemLabel="#{band.name}" itemValue="#{band}"/>
+                    </b:selectOneMenu>
+                    <b:buttonGroup>
+                        <b:commandButton value="Save" update=":tableRow :addRow :editRow" action="#{albumBean.saveAlbum}"/>
+                        <b:commandButton value="Cancel" update=":addRow :editRow" action="#{albumBean.cancelEditAlbum}"/>
+                    </b:buttonGroup>
                 </b:form>
             </b:column>
         </b:row>

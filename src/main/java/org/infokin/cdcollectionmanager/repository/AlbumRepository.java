@@ -10,8 +10,14 @@ import java.util.List;
 @Stateless
 public class AlbumRepository extends AbstractBaseRepository<Album> {
 
+    /*---------
+    | Methods |
+    ---------*/
+
     @Override
-    public void update(Album entity) {
+    public List<Album> getAll() {
+        TypedQuery<Album> query = entityManager.createQuery("SELECT albums FROM Album albums", Album.class);
+        return query.getResultList();
     }
 
     @Override
@@ -19,11 +25,5 @@ public class AlbumRepository extends AbstractBaseRepository<Album> {
         TypedQuery<Album> query = entityManager.createQuery("SELECT album FROM Album album WHERE album.id = :id", Album.class);
         query.setParameter("id", id);
         return query.getSingleResult();
-    }
-
-    @Override
-    public List<Album> getAll() {
-        TypedQuery<Album> query = entityManager.createQuery("SELECT albums FROM Album albums", Album.class);
-        return query.getResultList();
     }
 }

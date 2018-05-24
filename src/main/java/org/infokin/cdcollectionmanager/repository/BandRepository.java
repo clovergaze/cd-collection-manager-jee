@@ -10,12 +10,9 @@ import java.util.List;
 @Stateless
 public class BandRepository extends AbstractBaseRepository<Band> {
 
-    @Override
-    public Band get(Long id) {
-        TypedQuery<Band> query = entityManager.createQuery("SELECT band FROM Band band WHERE band.id = :id", Band.class);
-        query.setParameter("id", id);
-        return query.getSingleResult();
-    }
+    /*---------
+    | Methods |
+    ---------*/
 
     @Override
     public List<Band> getAll() {
@@ -24,7 +21,9 @@ public class BandRepository extends AbstractBaseRepository<Band> {
     }
 
     @Override
-    public void update(Band entity) {
-        entityManager.merge(entity);
+    public Band get(Long id) {
+        TypedQuery<Band> query = entityManager.createQuery("SELECT band FROM Band band WHERE band.id = :id", Band.class);
+        query.setParameter("id", id);
+        return query.getSingleResult();
     }
 }
