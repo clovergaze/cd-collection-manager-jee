@@ -3,6 +3,4 @@ simple reference application
 uses BootsFaces
 
 # Setup
-- uses WildFly
-- create database CDCollectionManagerDB
-- create datasource CDCollectionManagerDS for DB in WildFly
+- uses WildFly H2 in-memory database with datasource CDCollectionManagerDS (no action required)
