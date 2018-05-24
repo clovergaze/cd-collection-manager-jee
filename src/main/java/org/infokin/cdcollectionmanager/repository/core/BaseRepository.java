@@ -17,20 +17,6 @@ public interface BaseRepository<T extends BaseEntity> {
     void save(T entity);
 
     /**
-     * Update an existing entity.
-     *
-     * @param entity An instance of {@link BaseEntity}
-     */
-    void update(T entity);
-
-    /**
-     * Delete an entity.
-     *
-     * @param entity An instance of type {@link BaseEntity}
-     */
-    void delete(T entity);
-
-    /**
      * Returns an entity by its identifier.
      *
      * @param id The entities identifier.
@@ -44,4 +30,18 @@ public interface BaseRepository<T extends BaseEntity> {
      * @return A list of entities.
      */
     List<T> getAll();
+
+    /**
+     * Update an existing entity.
+     *
+     * @param entity An instance of {@link BaseEntity}
+     */
+    void update(T entity);
+
+    /**
+     * Delete an entity.
+     *
+     * @param entity An instance of type {@link BaseEntity}
+     */
+    void delete(T entity);
 }
