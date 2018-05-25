@@ -15,10 +15,10 @@
                     <b:dataTable value="#{albumBean.allAlbums}" var="album">
                         <b:dataTableColumn value="#{album.name}" label="Album name"/>
                         <b:dataTableColumn label="Edit">
-                            <b:commandButton icon="edit" update=":addRow :editRow" action="#{albumBean.editAlbum(album)}"/>
+                            <b:commandButton icon="edit" action="#{albumBean.editAlbum(album)}"/>
                         </b:dataTableColumn>
                         <b:dataTableColumn label="Delete">
-                            <b:commandButton icon="trash" update="@form" action="#{albumBean.deleteAlbum(album)}"/>
+                            <b:commandButton icon="trash" action="#{albumBean.deleteAlbum(album)}"/>
                         </b:dataTableColumn>
                     </b:dataTable>
                 </b:form>
@@ -34,7 +34,7 @@
                     <b:selectOneMenu value="#{albumBean.newBand}" converter="omnifaces.SelectItemsConverter">
                         <f:selectItems value="#{bandBean.allBands}" var="band" itemLabel="#{band.name}" itemValue="#{band}"/>
                     </b:selectOneMenu>
-                    <b:commandButton value="Add" update="@form :tableRow" action="#{albumBean.createAlbum}"/>
+                    <b:commandButton value="Add" action="#{albumBean.createAlbum}"/>
                 </b:form>
             </b:column>
         </b:row>
@@ -49,8 +49,8 @@
                         <f:selectItems value="#{bandBean.allBands}" var="band" itemLabel="#{band.name}" itemValue="#{band}"/>
                     </b:selectOneMenu>
                     <b:buttonGroup>
-                        <b:commandButton value="Save" update=":tableRow :addRow :editRow" action="#{albumBean.saveAlbum}"/>
-                        <b:commandButton value="Cancel" update=":addRow :editRow" action="#{albumBean.cancelEditAlbum}"/>
+                        <b:commandButton value="Save" action="#{albumBean.saveAlbum}"/>
+                        <b:commandButton value="Cancel" action="#{albumBean.cancelEditAlbum}"/>
                     </b:buttonGroup>
                 </b:form>
             </b:column>

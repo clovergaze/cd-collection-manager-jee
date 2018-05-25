@@ -14,10 +14,10 @@
                     <b:dataTable value="#{bandBean.allBands}" var="band">
                         <b:dataTableColumn value="#{band.name}" label="Band name"/>
                         <b:dataTableColumn label="Edit">
-                            <b:commandButton icon="edit" update=":addRow :editRow" action="#{bandBean.editBand(band)}"/>
+                            <b:commandButton icon="edit" action="#{bandBean.editBand(band)}"/>
                         </b:dataTableColumn>
                         <b:dataTableColumn label="Delete">
-                            <b:commandButton icon="trash" update="@form" action="#{bandBean.deleteBand(band)}"/>
+                            <b:commandButton icon="trash" action="#{bandBean.deleteBand(band)}"/>
                         </b:dataTableColumn>
                     </b:dataTable>
                 </b:form>
@@ -29,7 +29,7 @@
                 <b:form>
                     Band name
                     <b:inputText value="#{bandBean.newBandName}"><b:focus/></b:inputText>
-                    <b:commandButton value="Add" update="@form :tableRow" action="#{bandBean.createBand}"/>
+                    <b:commandButton value="Add" action="#{bandBean.createBand}"/>
                 </b:form>
             </b:column>
         </b:row>
@@ -40,8 +40,8 @@
                     Band name
                     <b:inputText value="#{bandBean.selectedBand.name}"><b:focus/></b:inputText>
                     <b:buttonGroup>
-                        <b:commandButton value="Save" update=":tableRow :addRow :editRow" action="#{bandBean.saveBand}"/>
-                        <b:commandButton value="Cancel" update=":addRow :editRow" action="#{bandBean.cancelEditBand}"/>
+                        <b:commandButton value="Save" action="#{bandBean.saveBand}"/>
+                        <b:commandButton value="Cancel" action="#{bandBean.cancelEditBand}"/>
                     </b:buttonGroup>
                 </b:form>
             </b:column>
