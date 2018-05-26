@@ -14,6 +14,34 @@
 
     <packaging>war</packaging>
 
+    <description>
+        A simple Java EE application for managing a CD collection.
+    </description>
+    <inceptionYear>2018</inceptionYear>
+
+    <licenses>
+        <license>
+            <name>The MIT License (MIT)</name>
+            <url>https://opensource.org/licenses/mit</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <id>clovergaze</id>
+            <name>Johannes Hillert</name>
+            <email>johannes.hillert@infokin.org</email>
+            <roles>
+                <role>Original Author</role>
+            </roles>
+        </developer>
+    </developers>
+
+    <organization>
+        <name>Infokin.org</name>
+        <url>http://www.infokin.org/</url>
+    </organization>
+
     <properties>
         <!-- Explicitly declare the source encoding to avoid warning messages. -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -26,7 +54,6 @@
 
         <!-- Plugins -->
         <version.plugin.compiler>3.7.0</version.plugin.compiler>
-        <version.plugin.ejb>3.0.1</version.plugin.ejb>
         <version.plugin.war>3.2.0</version.plugin.war>
     </properties>
 
@@ -68,14 +95,10 @@
                     </configuration>
                 </plugin>
 
-                <!-- Maven EJB Plugin -->
+                <!-- Maven WAR Plugin -->
                 <plugin>
-                    <artifactId>maven-ejb-plugin</artifactId>
-                    <version>${version.plugin.ejb}</version>
-
-                    <configuration>
-                        <ejbVersion>${version.ejb}</ejbVersion>
-                    </configuration>
+                    <artifactId>maven-war-plugin</artifactId>
+                    <version>${version.plugin.war}</version>
                 </plugin>
             </plugins>
         </pluginManagement>
