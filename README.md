@@ -9,7 +9,7 @@ For simplicity the application uses an H2 in-memory database as datasource, but 
 
 ## How to build
 [Maven](https://maven.apache.org/) is used to build the program from source code. 
-Just execute the following Maven goal to build and package the application:
+Just execute the following Maven goals to build and package the application:
 
 ~~~bash
 mvn clean package
