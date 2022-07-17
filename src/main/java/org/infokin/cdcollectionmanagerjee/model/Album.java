@@ -1,6 +1,6 @@
-package org.infokin.cdcollectionmanager.model;
+package org.infokin.cdcollectionmanagerjee.model;
 
-import org.infokin.cdcollectionmanager.model.core.BaseEntity;
+import org.infokin.cdcollectionmanagerjee.model.core.BaseEntity;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;

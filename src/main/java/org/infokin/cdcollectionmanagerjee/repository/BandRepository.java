@@ -1,7 +1,7 @@
-package org.infokin.cdcollectionmanager.repository;
+package org.infokin.cdcollectionmanagerjee.repository;
 
-import org.infokin.cdcollectionmanager.model.Band;
-import org.infokin.cdcollectionmanager.repository.core.AbstractBaseRepository;
+import org.infokin.cdcollectionmanagerjee.model.Band;
+import org.infokin.cdcollectionmanagerjee.repository.core.AbstractBaseRepository;
 
 import javax.ejb.Stateless;
 import javax.persistence.TypedQuery;

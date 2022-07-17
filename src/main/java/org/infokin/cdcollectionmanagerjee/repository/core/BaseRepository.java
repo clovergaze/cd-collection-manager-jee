@@ -1,6 +1,6 @@
-package org.infokin.cdcollectionmanager.repository.core;
+package org.infokin.cdcollectionmanagerjee.repository.core;
 
-import org.infokin.cdcollectionmanager.model.core.BaseEntity;
+import org.infokin.cdcollectionmanagerjee.model.core.BaseEntity;
 
 import java.util.List;
 

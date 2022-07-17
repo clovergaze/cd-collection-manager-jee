@@ -1,8 +1,8 @@
-package org.infokin.cdcollectionmanager.bean;
+package org.infokin.cdcollectionmanagerjee.bean;
 
-import org.infokin.cdcollectionmanager.model.Album;
-import org.infokin.cdcollectionmanager.model.Band;
-import org.infokin.cdcollectionmanager.service.AlbumService;
+import org.infokin.cdcollectionmanagerjee.model.Album;
+import org.infokin.cdcollectionmanagerjee.model.Band;
+import org.infokin.cdcollectionmanagerjee.service.AlbumService;
 
 import javax.faces.view.ViewScoped;
 import javax.inject.Inject;

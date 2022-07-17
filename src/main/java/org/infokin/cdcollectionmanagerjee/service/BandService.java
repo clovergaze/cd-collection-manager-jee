@@ -1,7 +1,7 @@
-package org.infokin.cdcollectionmanager.service;
+package org.infokin.cdcollectionmanagerjee.service;
 
-import org.infokin.cdcollectionmanager.model.Band;
-import org.infokin.cdcollectionmanager.repository.BandRepository;
+import org.infokin.cdcollectionmanagerjee.model.Band;
+import org.infokin.cdcollectionmanagerjee.repository.BandRepository;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;

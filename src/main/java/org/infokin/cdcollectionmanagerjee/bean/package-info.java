@@ -1,4 +1,4 @@
 /**
  * This package contains page backing beans.
  */
-package org.infokin.cdcollectionmanager.bean;
+package org.infokin.cdcollectionmanagerjee.bean;

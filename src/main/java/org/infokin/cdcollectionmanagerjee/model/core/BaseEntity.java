@@ -1,4 +1,4 @@
-package org.infokin.cdcollectionmanager.model.core;
+package org.infokin.cdcollectionmanagerjee.model.core;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
