@@ -6,10 +6,10 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <name>CD Collection Manager</name>
+    <name>CD Collection Manager (JEE)</name>
 
     <groupId>org.infokin</groupId>
-    <artifactId>cd-collection-manager</artifactId>
+    <artifactId>cd-collection-manager-jee</artifactId>
     <version>1.0</version>
 
     <packaging>war</packaging>
@@ -38,8 +38,8 @@
     </developers>
 
     <organization>
-        <name>Infokin.org</name>
-        <url>http://www.infokin.org/</url>
+        <name>Infokin</name>
+        <url>https://www.infokin.org/</url>
     </organization>
 
     <properties>
