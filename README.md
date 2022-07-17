@@ -26,7 +26,7 @@ required. To use another database simply configure one called `CDCollectionManag
 ## Bugs & Issues
 
 If there are problems with this program or you find any bugs, then please feel free to create a new issue on the
-[corresponding GitHub page](https://github.com/clovergaze/cd-collection-manager/issues).
+[corresponding GitHub page](https://github.com/clovergaze/cd-collection-manager-jee/issues).
 
 ## Author
 
